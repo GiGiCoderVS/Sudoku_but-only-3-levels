@@ -7,7 +7,7 @@ import Lose from "./components/LoseGame";
 const BaseRouter = props => {
     return(
         <Routes>
-            <Route path="/game" element={<GameHOK state={props.state} dispatch={props.dispatch} />} />
+            <Route path="/game" element={<GameHOK />} />
             <Route path="/" element={<Menu />} />
             <Route path="/won" element={<Won />} />
             <Route path="/lose" element={<Lose />} />

@@ -2,10 +2,10 @@
 import './App.css';
 import BaseRouter from './router';
 
-function App (props) {
+function App () {
   return (
     <div className="App">
-      <BaseRouter state={props.state} dispatch={props.dispatch} />
+      <BaseRouter />
     </div>
   );
 }

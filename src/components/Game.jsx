@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react"
-import { changeValueAC, nextLevel, restartLevel } from "../store/actionCreators"
 import { useNavigate } from "react-router-dom"
 
 const Game = props => {
     const navigate = useNavigate()
     const [indexArr, changeIndexArr] = useState([0, 0])
     const changeValue = (e) => {
-        const action = changeValueAC(indexArr, e.target.textContent)
-        props.dispatch(action)
+        props.changeValue(indexArr, e.target.textContent)
     }
     const isWon = () => {
         for (const arr of props.matrixData) {
@@ -15,12 +13,12 @@ const Game = props => {
                 return
             }
         }
-        props.dispatch(nextLevel())
+        props.nextLevel()
         navigate("/won")
     }
     const isLose = () => {
         if (props.mistakes >= 5) {
-            props.dispatch(restartLevel())
+            props.restartLevel()
             navigate("/lose")
         }
     }

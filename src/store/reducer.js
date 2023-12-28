@@ -67,7 +67,7 @@ const initialState = {
         end: data.matrixData[data.level][0],
     }
 }
-const reducer = (state = initialState, action = { type: "" }) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case CHANGE_VALUE:
             let newState = {
